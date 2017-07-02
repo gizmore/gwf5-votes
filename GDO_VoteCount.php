@@ -1,5 +1,5 @@
 <?php
-final class GDO_VoteCount extends  GDO_Int
+class GDO_VoteCount extends  GDO_Int
 {
 	public function defaultLabel() { return $this->label('votes'); }
 
