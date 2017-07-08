@@ -1,6 +1,9 @@
 <?php
 class GDO_LikeCount extends GDO_VoteCount
 {
+	public $writable = false;
+	public $editable = false;
+	
 	public function defaultLabel() { return $this->label('likes'); }
 
 	public function getLikeObject()

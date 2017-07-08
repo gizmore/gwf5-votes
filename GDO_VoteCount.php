@@ -1,6 +1,9 @@
 <?php
 class GDO_VoteCount extends  GDO_Int
 {
+	public $writable = false;
+	public $editable = false;
+	
 	public function defaultLabel() { return $this->label('votes'); }
 
 	public function __construct()

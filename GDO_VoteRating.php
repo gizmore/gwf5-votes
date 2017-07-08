@@ -1,8 +1,12 @@
 <?php
 final class GDO_VoteRating extends GDO_Decimal
 {
+	public $writable = false;
+	public $editable = false;
+	
 	public function defaultLabel()
 	{
+		$this->initial('0.00');
 		return $this->label('rating');
 	}
 	
