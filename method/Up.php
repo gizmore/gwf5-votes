@@ -32,7 +32,7 @@ final class Votes_Up extends GWF_Method
 			return $this->error('err_rate_param_between', [1, $object->gdoVoteMax()]);
 		}
 		
-		$count = $table->countWhere(sprintf("vote_object=%s AND vote_ip='%s'", $object->getID(), GDO_IP::current()));
+		$count = $table->countWhere(sprintf("vote_object=%s AND vote_ip='%s' AND vote_user!=%s", $object->getID(), GDO_IP::current(), $user->getID()));
 		
 		if ($count === 0)
 		{

@@ -1,5 +1,6 @@
 <?php $field instanceof GDO_VoteSelection; ?>
 <div
+ class="gwf-vote-selection"
  ng-controller="GWFVoteCtrl"
  ng-init='voteInit(<?php echo $field->initJSON(); ?>);'>
  <jk-rating-stars

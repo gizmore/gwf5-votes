@@ -15,5 +15,6 @@ final class Module_Votes extends GWF_Module
 	{
 		$min = Module_GWF::instance()->cfgMinifyJS() !== 'no' ? '.min' : '';
 		$this->addJavascript('js/gwf-vote-ctrl.js');
+		$this->addCSS('css/gwf-votes.css');
 	}
 }
