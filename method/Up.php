@@ -1,4 +1,9 @@
 <?php
+/**
+ * Vote on an item.
+ * Check for IP duplicates.
+ * @author gizmore
+ */
 final class Votes_Up extends GWF_Method
 {
 	public function execute()
@@ -27,7 +32,7 @@ final class Votes_Up extends GWF_Method
 		
 		# Check rate value
 		if ( (!($value = Common::getRequestInt('rate'))) ||
-			 (($value < 1) || ($value > $object->gdoVoteMax())) )
+			 (($value < 1) || ($value > $table->gdoVoteMax())) )
 		{
 			return $this->error('err_rate_param_between', [1, $object->gdoVoteMax()]);
 		}
@@ -57,7 +62,6 @@ final class Votes_Up extends GWF_Method
 		}
 		
 		return $this->error('err_vote_ip');
-
 	}
 	
 }
